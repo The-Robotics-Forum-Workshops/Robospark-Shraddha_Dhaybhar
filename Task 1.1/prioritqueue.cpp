@@ -51,32 +51,38 @@ void dequeue()
     }
     s--;
 }
-void len   ()
+int len()
 {
+   int count;
     int ind = Top();
     for (int i = ind; i < s; i++) {
-        p[i] = p[i + 1];
+        count++;
     }
     s--;
+    return count;
 }
 
 int main(){
    cout << "length of ropes\n";
-   int arr[]={3,5,24,5,1,7,8}; 
-   enqueue(3,5);
-   enqueue(5,6);
-   enqueue(24,4);
+   int arr[]={3,5,24,5,1,7,8};
+   enqueue(3,2);
+   enqueue(5,4);
+   enqueue(24,6);
    enqueue(1,1);
-   enqueue(7,2);
-   enqueue(8,3);
-   int prize;
-   for (int i=0;i<len(arr);i++){
+   enqueue(7,4);
+   enqueue(8,5);
+   int price=0;
+   for (int i=0;i<len()/2;i++){
     int ind = Top();
     ind = Top();
     cout << p[ind].length << endl;
+    price=price+p[ind].length;
     dequeue();
     ind = Top();
     cout << p[ind].length << endl;
+    price=price+p[ind].length;
+    dequeue();
    }
+   cout <<"\nprize of ropes\n"<<price;
     return 0;
 };
