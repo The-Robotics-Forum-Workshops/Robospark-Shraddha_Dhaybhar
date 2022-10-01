@@ -1,7 +1,7 @@
 
 # include <iostream>
 # include <stack>
-#include <stdlib.h>
+# include <stdlib.h>
 
 struct BstNode 
 {
